@@ -1,0 +1,31 @@
+{
+  "name": "email-obfuscate",
+  "version": "1.0.0",
+  "description": "Build-time email obfuscation for static sites. Automatically encodes emails as HTML entities in generated HTML to prevent scraping.",
+  "bin": {
+    "email-obfuscate": "./obfuscate-emails.js"
+  },
+  "main": "obfuscate-emails.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "email",
+    "obfuscation",
+    "static-site",
+    "hexo",
+    "hugo",
+    "jekyll",
+    "cloudflare",
+    "crawler",
+    "spam"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=12"
+  },
+  "files": [
+    "obfuscate-emails.js",
+    "README.md"
+  ]
+}
