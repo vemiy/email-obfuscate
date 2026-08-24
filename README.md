@@ -6,9 +6,18 @@ Browsers render emails normally; crawlers see entity-encoded gibberish.
 
 ## Install
 
+Clone the repo:
+
+```sh
+git clone https://github.com/vemiy/email-obfuscate.git
+```
+
+Or install via npm (not yet published):
+
 ```sh
 npm install email-obfuscate
 ```
+*(not available yet — becomes available after `npm publish`)*
 
 ## Usage
 
@@ -17,6 +26,7 @@ Run after your static site generates HTML:
 ```sh
 npx email-obfuscate
 ```
+*(as with install, `npx` only resolves once the package is published to npm)*
 
 Works with **any** static site generator that outputs to `./public/`:
 
@@ -46,7 +56,7 @@ Or add to your build script:
 
 - This is a build hook, not a framework plugin. It reads from `./public/` in the current working directory.
 - Obfuscation reduces the chance of a simple crawler picking up an email; it is not a guarantee against a crawler that executes JavaScript or decodes entities.
-- Some hosting platforms (e.g. Cloudflare Workers Static Assets) do not apply built-in email obfuscation to HTML responses. This script provides a reliable fallback that works regardless of the hosting setup.
+- Cloudflare's built-in Email Address Obfuscation does not apply to content added by Workers. This script provides a reliable fallback that works at build time, regardless of the hosting setup.
 
 ## License
 
