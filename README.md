@@ -12,21 +12,19 @@ Clone the repo:
 git clone https://github.com/vemiy/email-obfuscate.git
 ```
 
-Or install via npm (not yet published):
+Or install via npm:
 
 ```sh
-npm install email-obfuscate
+npm install @vemiy/email-obfuscate
 ```
-*(not available yet — becomes available after `npm publish`)*
 
 ## Usage
 
 Run after your static site generates HTML:
 
 ```sh
-npx email-obfuscate
+npx @vemiy/email-obfuscate
 ```
-*(as with install, `npx` only resolves once the package is published to npm)*
 
 Works with **any** static site generator that outputs to `./public/`:
 
