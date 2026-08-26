@@ -1,6 +1,6 @@
 {
   "name": "@vemiy/email-obfuscate",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Build-time email obfuscation for static sites. Automatically encodes emails as HTML entities in generated HTML to prevent scraping.",
   "bin": {
     "email-obfuscate": "./obfuscate-emails.js"

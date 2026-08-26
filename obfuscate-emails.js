@@ -34,8 +34,13 @@ function walk(dir, out) {
 }
 
 if (require.main === module) {
-  const publicDir = path.join(process.cwd(), 'public')
-  if (!fs.existsSync(publicDir)) { console.log('public/ not found, skip.'); process.exit(0) }
+  let publicDir = process.env.EMAIL_OBFUSCATE_DIR || 'public'
+  for (let i = 2; i < process.argv.length; i++) {
+    if (process.argv[i] === '--dir') publicDir = process.argv[++i]
+    else if (process.argv[i].startsWith('--dir=')) publicDir = process.argv[i].slice(6)
+  }
+  publicDir = path.resolve(publicDir)
+  if (!fs.existsSync(publicDir)) { console.log(publicDir + ': directory not found, skip.'); process.exit(0) }
   let count = 0
   for (const file of walk(publicDir, [])) {
     try {
